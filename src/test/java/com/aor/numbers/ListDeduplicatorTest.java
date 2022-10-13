@@ -10,12 +10,12 @@ public class ListDeduplicatorTest {
 
     @Test
     public void deduplicate() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
-        List<Integer> expected = Arrays.asList(1,2,4,5);
-
         ListDeduplicator deduplicator = new ListDeduplicator();
-        List<Integer> distinct = deduplicator.deduplicate(list);
+        List<Integer> distinct = deduplicator.deduplicate(helper(1,2,4,2,5));
 
-        Assertions.assertEquals(expected, distinct);
+        Assertions.assertEquals(helper(1,2,4,5), distinct);
+    }
+    private List<Integer> helper(Integer... intList){
+        return Arrays.asList(intList);
     }
 }

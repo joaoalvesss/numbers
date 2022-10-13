@@ -10,12 +10,12 @@ public class ListSorterTest {
 
     @Test
     public void sort() {
-        List<Integer> list = Arrays.asList(3, 2, 6, 1, 4, 5, 7);
-        List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
-
         ListSorter sorter = new ListSorter();
-        List<Integer> sorted = sorter.sort(list);
+        List<Integer> sorted = sorter.sort(helper(3, 2, 6, 1, 4, 5, 7));
 
-        Assertions.assertEquals(expected, sorted);
+        Assertions.assertEquals(helper(1, 2, 3, 4, 5, 6, 7), sorted);
+    }
+    private List<Integer> helper(Integer... intList){
+        return Arrays.asList(intList);
     }
 }
