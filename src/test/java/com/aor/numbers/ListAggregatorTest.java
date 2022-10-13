@@ -9,47 +9,37 @@ import java.util.List;
 public class ListAggregatorTest {
     @Test
     public void sum() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
-
         ListAggregator aggregator = new ListAggregator();
-        int sum = aggregator.sum(list);
+        int sum = aggregator.sum(helper(1,2,4,2,5));
 
         Assertions.assertEquals(14, sum);
     }
 
     @Test
     public void max() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
-
         ListAggregator aggregator = new ListAggregator();
-        int max = aggregator.max(list);
+        int max = aggregator.max(helper(1,2,4,2,5));
 
         Assertions.assertEquals(5, max);
     }
 
     @Test
     public void min() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
-
         ListAggregator aggregator = new ListAggregator();
-        int min = aggregator.min(list);
+        int min = aggregator.min(helper(1,2,4,2,5));
 
         Assertions.assertEquals(1, min);
     }
 
     @Test
     public void distinct() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
-
         ListAggregator aggregator = new ListAggregator();
-        int distinct = aggregator.distinct(list);
+        int distinct = aggregator.distinct(helper(1,2,4,2,5));
 
         Assertions.assertEquals(4, distinct);
     }
-    /*
-        private List<Integer> helper(Integer... intList){
-        List<Integer> list = Arrays.asList(intList);
-        return list;
+
+    private List<Integer> helper(Integer... intList){
+        return Arrays.asList(intList);
     }
-     */
 }
