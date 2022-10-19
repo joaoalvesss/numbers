@@ -26,7 +26,7 @@ public class ListDeduplicatorTest {
         StubListSorter sorter = new StubListSorter();
         ListDeduplicator deduplicator = new ListDeduplicator(sorter);
         List<Integer> distinct = deduplicator.deduplicate(list);
-        Assertions.assertEquals(list, distinct);
+        Assertions.assertEquals(Arrays.asList(1,2,4,5), distinct);
     }
     @Test
     public void bug_deduplicate_8726() {
@@ -39,6 +39,6 @@ public class ListDeduplicatorTest {
         StubListSorter sorter = new StubListSorter();
         ListDeduplicator deduplicator = new ListDeduplicator(sorter);
         List<Integer> distinct = deduplicator.deduplicate(list);
-        Assertions.assertEquals(list, distinct);
+        Assertions.assertEquals(Arrays.asList(1,2,4), distinct);
     }
 }
